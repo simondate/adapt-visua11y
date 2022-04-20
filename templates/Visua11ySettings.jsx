@@ -27,6 +27,23 @@ export default function Visua11ySettings(config) {
       </div>
       }
 
+      <div className='visua11ysettings__group visua11ysettings__group-scrollsnap' role='listitem' aria-labelledby='scrollsnap'>
+        {config._groups.scrollSnap &&
+          <div className='visua11ysettings__group-title' id='scrollsnap' role="heading" aria-level="3">
+            {config._groups.scrollSnap}
+          </div>
+        }
+        {config._noScrollSnap._isEnabled &&
+          <div className='visua11ysettings__item noscrollsnap'>
+            <label className='visua11ysettings__item-label' htmlFor='noscrollsnap'>
+              <div className='icon'></div>
+              {config._noScrollSnap.title}
+            </label>
+            <input type='checkbox' id='noscrollsnap' name='noScrollSnap' checked={visua11y.noScrollSnap} onChange={onChange} />
+          </div>
+        }
+      </div>
+
       {(config._colorProfile._isEnabled ||
         config._highContrast._isEnabled ||
         config._noTransparency._isEnabled ||
@@ -36,7 +53,7 @@ export default function Visua11ySettings(config) {
         <div className='visua11ysettings__group visua11ysettings__group-visualdisplay' role='group' aria-labelledby='visualdisplay'>
           {/* Should 'visua11ysettings__group-title' read as a title or is the lablled list enough? */}
           {config._groups.visualDisplay &&
-          <div className='visua11ysettings__group-title' id='visualdisplay'>
+          <div className='visua11ysettings__group-title' id='visualdisplay' role="heading" aria-level="3">
             {config._groups.visualDisplay}
           </div>
           }
@@ -107,7 +124,7 @@ export default function Visua11ySettings(config) {
 
         <div className='visua11ysettings__group visua11ysettings__group-distractions' role='group' aria-labelledby='distractions'>
           {config._groups.distractions &&
-          <div className='visua11ysettings__group-title' id='distractions'>
+          <div className='visua11ysettings__group-title' id='distractions' role="heading" aria-level="3">
             {config._groups.distractions}
           </div>
           }
@@ -142,7 +159,7 @@ export default function Visua11ySettings(config) {
 
         <div className='visua11ysettings__group visua11ysettings__group-readability' role='group' aria-labelledby='readability'>
           {config._groups.readability &&
-          <div className='visua11ysettings__group-title' id='readability'>
+          <div className='visua11ysettings__group-title' id='readability' role="heading" aria-level="3">
             {config._groups.readability}
           </div>
           }
